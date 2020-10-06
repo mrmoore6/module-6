@@ -16,7 +16,14 @@ def score_input(test_name, test_score = 0 , invalid_message = 'Invalid test scor
 
     """
     #print('{}: {}%'.format(test_name,test_score)
-    return'{}: {}%'.format(test_name,test_score)
+    try:
+        if test_score >= 0 and test_score <= 100:
+            return'{}: {}%'.format(test_name,test_score)
+        else:
+             return invalid_message
+    except TypeError:
+        raise TypeError
+
 
 
 if __name__ == '__main__':
